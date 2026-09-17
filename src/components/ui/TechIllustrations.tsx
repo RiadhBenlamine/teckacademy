@@ -13,7 +13,6 @@ export function HeroIllustration({ className = "" }: { className?: string }) {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full drop-shadow-xl"
-        dir="ltr"
         style={{ direction: "ltr" }}
       >
         <defs>
