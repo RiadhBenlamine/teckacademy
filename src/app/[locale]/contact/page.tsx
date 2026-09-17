@@ -104,10 +104,10 @@ export default function ContactPage() {
                       {locale === "ar" ? "البريد الإلكتروني" : "Email"}
                     </div>
                     <a
-                      href="mailto:contact@techkids.academy"
+                      href="mailto:contact@techkids.dz"
                       className="text-sm sm:text-base font-semibold text-slate-800 hover:text-blue-600 transition-colors"
                     >
-                      contact@techkids.academy
+                      contact@techkids.dz
                     </a>
                   </div>
                 </div>
@@ -121,7 +121,7 @@ export default function ContactPage() {
                       {locale === "ar" ? "الهاتف" : "Phone"}
                     </div>
                     <span className="text-sm sm:text-base font-semibold text-slate-800 bidi-isolate" dir="ltr">
-                      +966 50 123 4567
+                      +213 555555555
                     </span>
                   </div>
                 </div>
@@ -195,7 +195,7 @@ export default function ContactPage() {
                         required
                         value={formData.childName}
                         onChange={(e) => setFormData({ ...formData, childName: e.target.value })}
-                        placeholder={locale === "ar" ? "مثال: عبد الله" : "e.g. Alex"}
+                        placeholder={locale === "ar" ? "إحسان" : "e.g. Ihssane"}
                         className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-blue-500 transition-colors"
                       />
                     </div>
@@ -276,7 +276,7 @@ export default function ContactPage() {
                         dir="ltr"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+966 5x xxx xxxx"
+                        placeholder="+213 5x xxx xxxx"
                         className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-blue-500 transition-colors"
                       />
                     </div>
@@ -350,9 +350,8 @@ export default function ContactPage() {
                     >
                       <span className="text-base">{faq.q}</span>
                       <ChevronDown
-                        className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${
-                          isOpen ? "rotate-180 text-blue-600" : ""
-                        }`}
+                        className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180 text-blue-600" : ""
+                          }`}
                       />
                     </button>
                     {isOpen && (
