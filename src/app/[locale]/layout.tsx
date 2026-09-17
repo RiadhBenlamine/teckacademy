@@ -46,7 +46,7 @@ export async function generateMetadata({
     openGraph: {
       title: meta.title,
       description: meta.description,
-      locale: locale === "ar" ? "ar_SA" : "en_US",
+      locale: locale === "ar" ? "ar_DZ" : "en_US",
       type: "website",
       siteName: "TechKids Academy",
     },

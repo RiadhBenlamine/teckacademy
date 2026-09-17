@@ -135,7 +135,7 @@ export default function ContactPage() {
                       {locale === "ar" ? "الموقع" : "Location"}
                     </div>
                     <span className="text-sm sm:text-base font-semibold text-slate-800">
-                      {locale === "ar" ? "الرياض، المملكة العربية السعودية" : "Riyadh, Saudi Arabia"}
+                      {locale === "ar" ? "الشلف، الجزائر" : "Chlef, Algeria"}
                     </span>
                   </div>
                 </div>

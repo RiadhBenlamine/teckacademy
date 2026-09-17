@@ -190,8 +190,8 @@ export function Footer({ locale }: { locale: Locale }) {
                 <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                 <span>
                   {locale === "ar"
-                    ? "الرياض، المملكة العربية السعودية"
-                    : "Riyadh, Saudi Arabia"}
+                    ? "الشلف، الجزائر"
+                    : "Chlef, Algeria"}
                 </span>
               </li>
             </ul>
