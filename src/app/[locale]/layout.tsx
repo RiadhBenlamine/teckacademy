@@ -74,10 +74,30 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={dir}
+      suppressHydrationWarning
       className={`${ibmPlexArabic.variable} ${inter.variable} h-full scroll-smooth`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('techkids-theme');
+                  var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (theme === 'dark' || (!theme && supportDarkMode)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
-        className={`min-h-full flex flex-col antialiased selection:bg-blue-600 selection:text-white ${
+        className={`min-h-full flex flex-col antialiased selection:bg-blue-600 selection:text-white bg-slate-50 text-slate-900 dark:bg-[#090d16] dark:text-slate-100 ${
           isRtl ? "font-(family-name:--font-arabic)" : "font-(family-name:--font-inter)"
         }`}
       >

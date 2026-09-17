@@ -74,7 +74,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="py-12 md:py-20 bg-slate-50/50">
+    <div className="py-12 md:py-20 bg-slate-50/50 dark:bg-slate-950 transition-colors">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-10">
         <SectionHeading
           eyebrow={locale === "ar" ? "تواصل معنا" : "Get In Touch"}
@@ -89,23 +89,23 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
           {/* Contact Details Card */}
           <div className="lg:col-span-5 space-y-6">
-            <Card className="p-6 sm:p-8 border-slate-200/90">
-              <h3 className="text-xl font-bold text-slate-900 mb-6">
+            <Card className="p-6 sm:p-8 border-slate-200/90 dark:border-slate-800">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
                 {locale === "ar" ? "معلومات التواصل" : "Contact Information"}
               </h3>
 
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5 text-blue-600" />
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-100 dark:border-blue-800/80 flex items-center justify-center shrink-0">
+                    <Mail className="w-5 h-5 text-blue-600 dark:text-cyan-400" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-semibold uppercase">
+                    <div className="text-xs text-slate-400 dark:text-slate-500 font-semibold uppercase">
                       {locale === "ar" ? "البريد الإلكتروني" : "Email"}
                     </div>
                     <a
                       href="mailto:contact@techkids.dz"
-                      className="text-sm sm:text-base font-semibold text-slate-800 hover:text-blue-600 transition-colors"
+                      className="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors"
                     >
                       contact@techkids.dz
                     </a>
@@ -113,40 +113,40 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center shrink-0">
-                    <Phone className="w-5 h-5 text-cyan-600" />
+                  <div className="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-100 dark:border-cyan-800/80 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-semibold uppercase">
+                    <div className="text-xs text-slate-400 dark:text-slate-500 font-semibold uppercase">
                       {locale === "ar" ? "الهاتف" : "Phone"}
                     </div>
-                    <span className="text-sm sm:text-base font-semibold text-slate-800 bidi-isolate" dir="ltr">
+                    <span className="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200 bidi-isolate" dir="ltr">
                       +213 555555555
                     </span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0">
-                    <MapPin className="w-5 h-5 text-emerald-600" />
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-100 dark:border-emerald-800/80 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-400 font-semibold uppercase">
+                    <div className="text-xs text-slate-400 dark:text-slate-500 font-semibold uppercase">
                       {locale === "ar" ? "الموقع" : "Location"}
                     </div>
-                    <span className="text-sm sm:text-base font-semibold text-slate-800">
+                    <span className="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200">
                       {locale === "ar" ? "الشلف، الجزائر" : "Chlef, Algeria"}
                     </span>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-100 bg-blue-50/50 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-6 rounded-b-[24px]">
-                <div className="flex items-center gap-2 text-sm font-semibold text-blue-900 mb-1">
-                  <CheckCircle className="w-4 h-4 text-blue-600" />
+              <div className="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 bg-blue-50/50 dark:bg-slate-800/60 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-6 rounded-b-[24px]">
+                <div className="flex items-center gap-2 text-sm font-semibold text-blue-900 dark:text-cyan-300 mb-1">
+                  <CheckCircle className="w-4 h-4 text-blue-600 dark:text-cyan-400" />
                   <span>{locale === "ar" ? "جلسة تقييم مجانية" : "Free Assessment Session"}</span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                   {locale === "ar"
                     ? "نقدم جلسة استكشافية مجانية للتعرف على اهتمامات الطفل قبل بدء أي مسار."
                     : "We offer a free initial session to understand the child's curiosity prior to enrollment."}
@@ -157,16 +157,16 @@ export default function ContactPage() {
 
           {/* Form Card */}
           <div className="lg:col-span-7">
-            <Card className="p-6 sm:p-8 border-slate-200/90">
+            <Card className="p-6 sm:p-8 border-slate-200/90 dark:border-slate-800">
               {submitted ? (
                 <div className="py-12 text-center space-y-4">
-                  <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+                  <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto">
                     <CheckCircle className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
                     {locale === "ar" ? "تم إرسال طلبكم بنجاح!" : "Inquiry Submitted Successfully!"}
                   </h3>
-                  <p className="text-sm text-slate-600 max-w-md mx-auto">
+                  <p className="text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto">
                     {locale === "ar"
                       ? "شكراً لاهتمامكم بأكاديمية تيك كيدز. سيتواصل معكم فريقنا لتنسيق موعد جلسة التقييم الاستكشافية."
                       : "Thank you for reaching out to TechKids Academy. Our team will contact you shortly to arrange the exploratory session."}
@@ -174,20 +174,20 @@ export default function ContactPage() {
                   <button
                     type="button"
                     onClick={() => setSubmitted(false)}
-                    className="mt-4 px-6 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors"
+                    className="mt-4 px-6 py-2.5 rounded-xl bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition-colors cursor-pointer"
                   >
                     {locale === "ar" ? "إرسال طلب آخر" : "Submit Another Inquiry"}
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
                     {locale === "ar" ? "حجز جلسة استكشافية" : "Book an Exploratory Session"}
                   </h3>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                         {locale === "ar" ? "اسم الطفل" : "Child's Name"} *
                       </label>
                       <input
@@ -196,21 +196,21 @@ export default function ContactPage() {
                         value={formData.childName}
                         onChange={(e) => setFormData({ ...formData, childName: e.target.value })}
                         placeholder={locale === "ar" ? "إحسان" : "e.g. Ihssane"}
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-blue-500 transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:bg-white dark:focus:bg-slate-800/90 focus:border-blue-500 transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                         {locale === "ar" ? "عمر الطفل (3–17)" : "Child's Age (3–17)"} *
                       </label>
                       <select
                         value={formData.childAge}
                         onChange={(e) => setFormData({ ...formData, childAge: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-blue-500 transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:bg-white dark:focus:bg-slate-800/90 focus:border-blue-500 transition-colors"
                       >
                         {Array.from({ length: 15 }, (_, i) => i + 3).map((age) => (
-                          <option key={age} value={age}>
+                          <option key={age} value={age} className="dark:bg-slate-800">
                             {age} {locale === "ar" ? "سنة" : "Years"}
                           </option>
                         ))}
@@ -219,33 +219,33 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                       {locale === "ar" ? "المسار التكنولوجي المفضل" : "Preferred Technology Track"}
                     </label>
                     <select
                       value={formData.track}
                       onChange={(e) => setFormData({ ...formData, track: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-blue-500 transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:bg-white dark:focus:bg-slate-800/90 focus:border-blue-500 transition-colors"
                     >
-                      <option value="programming">
+                      <option value="programming" className="dark:bg-slate-800">
                         {locale === "ar" ? "البرمجة (Python / Scratch)" : "Programming (Python / Scratch)"}
                       </option>
-                      <option value="web-dev">
+                      <option value="web-dev" className="dark:bg-slate-800">
                         {locale === "ar" ? "تصميم وتطوير المواقع" : "Web Development"}
                       </option>
-                      <option value="game-dev">
+                      <option value="game-dev" className="dark:bg-slate-800">
                         {locale === "ar" ? "تطوير وصناعة الألعاب" : "Game Development"}
                       </option>
-                      <option value="ai">
+                      <option value="ai" className="dark:bg-slate-800">
                         {locale === "ar" ? "الذكاء الاصطناعي" : "Artificial Intelligence"}
                       </option>
-                      <option value="robotics">
+                      <option value="robotics" className="dark:bg-slate-800">
                         {locale === "ar" ? "الروبوتات والإلكترونيات" : "Robotics"}
                       </option>
-                      <option value="digital-design">
+                      <option value="digital-design" className="dark:bg-slate-800">
                         {locale === "ar" ? "التصميم الرقمي UI/UX" : "Digital Design"}
                       </option>
-                      <option value="not-sure">
+                      <option value="not-sure" className="dark:bg-slate-800">
                         {locale === "ar" ? "غير متأكد (نحتاج استشارة)" : "Not sure (Need Consultation)"}
                       </option>
                     </select>
@@ -253,7 +253,7 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                         {locale === "ar" ? "اسم ولي الأمر" : "Parent's Name"} *
                       </label>
                       <input
@@ -262,12 +262,12 @@ export default function ContactPage() {
                         value={formData.parentName}
                         onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
                         placeholder={locale === "ar" ? "الاسم الكامل" : "Full Name"}
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-blue-500 transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:bg-white dark:focus:bg-slate-800/90 focus:border-blue-500 transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                         {locale === "ar" ? "رقم الهاتف" : "Phone Number"} *
                       </label>
                       <input
@@ -277,13 +277,13 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+213 5x xxx xxxx"
-                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-blue-500 transition-colors"
+                        className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:bg-white dark:focus:bg-slate-800/90 focus:border-blue-500 transition-colors"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                       {locale === "ar" ? "البريد الإلكتروني" : "Email Address"} *
                     </label>
                     <input
@@ -293,12 +293,12 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="parent@example.com"
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-blue-500 transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:bg-white dark:focus:bg-slate-800/90 focus:border-blue-500 transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                       {locale === "ar" ? "ملاحظات أو أسئلة إضافية" : "Additional Notes or Questions"}
                     </label>
                     <textarea
@@ -310,7 +310,7 @@ export default function ContactPage() {
                           ? "شاركنا أي تفاصيل عن اهتمامات طفلك..."
                           : "Share any details regarding your child's interests..."
                       }
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm focus:bg-white focus:border-blue-500 transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:bg-white dark:focus:bg-slate-800/90 focus:border-blue-500 transition-colors"
                     />
                   </div>
 
@@ -328,10 +328,10 @@ export default function ContactPage() {
         </div>
 
         {/* FAQs Section */}
-        <div className="pt-8 border-t border-slate-200/80">
+        <div className="pt-8 border-t border-slate-200/80 dark:border-slate-800">
           <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-slate-900 text-center mb-8 flex items-center justify-center gap-2">
-              <HelpCircle className="w-6 h-6 text-blue-600" />
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-8 flex items-center justify-center gap-2">
+              <HelpCircle className="w-6 h-6 text-blue-600 dark:text-cyan-400" />
               <span>{locale === "ar" ? "الأسئلة الشائعة" : "Frequently Asked Questions"}</span>
             </h3>
 
@@ -341,21 +341,22 @@ export default function ContactPage() {
                 return (
                   <div
                     key={idx}
-                    className="bg-white rounded-2xl border border-slate-200/90 overflow-hidden transition-all"
+                    className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/90 dark:border-slate-800 overflow-hidden transition-all"
                   >
                     <button
                       type="button"
                       onClick={() => setOpenFaq(isOpen ? null : idx)}
-                      className="w-full p-5 text-start font-bold text-slate-800 flex items-center justify-between gap-4 hover:text-blue-600 transition-colors cursor-pointer"
+                      className="w-full p-5 text-start font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between gap-4 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors cursor-pointer"
                     >
                       <span className="text-base">{faq.q}</span>
                       <ChevronDown
-                        className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180 text-blue-600" : ""
-                          }`}
+                        className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${
+                          isOpen ? "rotate-180 text-blue-600 dark:text-cyan-400" : ""
+                        }`}
                       />
                     </button>
                     {isOpen && (
-                      <div className="px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                      <div className="px-5 pb-5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-3">
                         {faq.a}
                       </div>
                     )}

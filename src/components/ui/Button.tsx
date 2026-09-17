@@ -29,11 +29,11 @@ export function Button({
     cyan:
       "bg-cyan-500 text-white hover:bg-cyan-600 shadow-sm hover:shadow-md hover:shadow-cyan-500/20 border border-transparent",
     secondary:
-      "bg-slate-100 text-slate-800 hover:bg-slate-200/90 border border-slate-200/80",
+      "bg-slate-100 text-slate-800 hover:bg-slate-200/90 border border-slate-200/80 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700",
     outline:
-      "bg-white text-slate-800 border border-slate-200 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50/50 shadow-xs",
+      "bg-white text-slate-800 border border-slate-200 hover:border-blue-500 hover:text-blue-600 hover:bg-blue-50/50 shadow-xs dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700 dark:hover:border-blue-400 dark:hover:text-blue-400 dark:hover:bg-slate-800",
     ghost:
-      "bg-transparent text-slate-700 hover:text-blue-600 hover:bg-blue-50/60",
+      "bg-transparent text-slate-700 hover:text-blue-600 hover:bg-blue-50/60 dark:text-slate-300 dark:hover:text-blue-400 dark:hover:bg-slate-800",
   };
 
   const sizeStyles = {

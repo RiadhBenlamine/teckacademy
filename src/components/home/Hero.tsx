@@ -10,37 +10,37 @@ export function Hero({ locale }: { locale: Locale }) {
   const isRtl = locale === "ar";
 
   return (
-    <section className="relative pt-8 pb-14 md:pt-14 md:pb-20 lg:pt-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-blue-50/40 via-white to-slate-50/50">
+    <section className="relative pt-8 pb-14 md:pt-14 md:pb-20 lg:pt-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-blue-50/40 via-white to-slate-50/50 dark:from-slate-950 dark:via-[#090d16] dark:to-slate-950">
       {/* Decorative Grid and Ambient Glows */}
-      <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-blue-100/30 to-transparent pointer-events-none -z-10" />
-      <div className="absolute top-1/4 start-10 w-72 h-72 bg-cyan-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-1/3 end-10 w-80 h-80 bg-blue-200/20 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-blue-100/30 dark:from-blue-900/10 to-transparent pointer-events-none -z-10" />
+      <div className="absolute top-1/4 start-10 w-72 h-72 bg-cyan-200/20 dark:bg-cyan-900/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/3 end-10 w-80 h-80 bg-blue-200/20 dark:bg-blue-900/15 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           {/* Left Column (Right in RTL): Text & CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start text-start">
             {/* Small Badge / Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs sm:text-sm font-semibold mb-6 shadow-2xs">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-xs sm:text-sm font-semibold mb-6 shadow-2xs">
               <Sparkles className="w-4 h-4 text-amber-500 shrink-0" />
               <span>{meta.heroEyebrow}</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.18] sm:leading-[1.16]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.18] sm:leading-[1.16]">
               {locale === "ar" ? (
                 <>
-                  نكتشف <span className="text-blue-600 underline decoration-cyan-400 decoration-wavy decoration-2">قدراتكم</span>، نطور مهاراتكم، ونبني <span className="bg-gradient-to-l from-blue-600 to-cyan-600 bg-clip-text text-transparent">مستقبلكم</span>
+                  نكتشف <span className="text-blue-600 dark:text-cyan-400 underline decoration-cyan-400 dark:decoration-cyan-500 decoration-wavy decoration-2">قدراتكم</span>، نطور مهاراتكم، ونبني <span className="bg-gradient-to-l from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent">مستقبلكم</span>
                 </>
               ) : (
                 <>
-                  We discover <span className="text-blue-600 underline decoration-cyan-400 decoration-wavy decoration-2">potential</span>, develop skills, and build the <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">future</span>.
+                  We discover <span className="text-blue-600 dark:text-cyan-400 underline decoration-cyan-400 dark:decoration-cyan-500 decoration-wavy decoration-2">potential</span>, develop skills, and build the <span className="bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 bg-clip-text text-transparent">future</span>.
                 </>
               )}
             </h1>
 
             {/* Supporting Paragraph */}
-            <p className="mt-6 text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
+            <p className="mt-6 text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
               {meta.heroParagraph}
             </p>
 
@@ -60,15 +60,15 @@ export function Hero({ locale }: { locale: Locale }) {
 
               <Link
                 href={`#journey`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 hover:text-blue-600 border border-slate-200/90 font-semibold text-base shadow-2xs hover:shadow-xs transition-all min-h-[48px] cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400 border border-slate-200/90 dark:border-slate-800 font-semibold text-base shadow-2xs hover:shadow-xs transition-all min-h-[48px] cursor-pointer"
               >
-                <Compass className="w-4 h-4 text-blue-500" />
+                <Compass className="w-4 h-4 text-blue-500 dark:text-cyan-400" />
                 <span>{meta.heroSecondaryCTA}</span>
               </Link>
             </div>
 
             {/* Subtle Highlights under CTAs */}
-            <div className="mt-8 pt-6 border-t border-slate-200/70 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm text-slate-500 font-medium">
+            <div className="mt-8 pt-6 border-t border-slate-200/70 dark:border-slate-800 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">
               <div className="flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-500" />
                 <span>{isRtl ? "مناهج عالمية مواكبة" : "Global standard curricula"}</span>

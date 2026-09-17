@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Locale } from "@/lib/i18n";
 import { navigationLinks, siteMeta } from "@/data/academyData";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 import { X, Sparkles, ChevronRight, ChevronLeft } from "lucide-react";
 
 interface MobileMenuProps {
@@ -51,7 +52,7 @@ export function MobileMenu({ isOpen, onClose, locale }: MobileMenuProps) {
     >
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs transition-opacity duration-300"
+        className="fixed inset-0 bg-slate-900/50 backdrop-blur-xs transition-opacity duration-300"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -60,22 +61,22 @@ export function MobileMenu({ isOpen, onClose, locale }: MobileMenuProps) {
       <div
         className={`fixed inset-y-0 ${
           isRtl ? "right-0" : "left-0"
-        } w-full max-w-xs sm:max-w-sm bg-white shadow-2xl flex flex-col z-10 transition-transform duration-300 ease-out`}
+        } w-full max-w-xs sm:max-w-sm bg-white dark:bg-slate-900 border-x border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col z-10 transition-transform duration-300 ease-out`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-5 border-b border-slate-100">
+        <div className="flex items-center justify-between p-5 border-b border-slate-100 dark:border-slate-800">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-xs">
               TK
             </div>
-            <span className="font-bold text-base text-slate-900">
-              TechKids <span className="text-blue-600 font-medium">Academy</span>
+            <span className="font-bold text-base text-slate-900 dark:text-white">
+              TechKids <span className="text-blue-600 dark:text-cyan-400 font-medium">Academy</span>
             </span>
           </div>
           <button
             type="button"
             onClick={onClose}
-            className="p-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer"
+            className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
             aria-label={locale === "ar" ? "إغلاق القائمة" : "Close Menu"}
           >
             <X className="w-5 h-5" />
@@ -96,7 +97,7 @@ export function MobileMenu({ isOpen, onClose, locale }: MobileMenuProps) {
                 key={item.id}
                 href={href}
                 onClick={onClose}
-                className="flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50/70 transition-colors"
+                className="flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50/70 dark:hover:bg-slate-800/70 transition-colors"
               >
                 <span>{item.label[locale]}</span>
                 {isRtl ? (
@@ -110,8 +111,9 @@ export function MobileMenu({ isOpen, onClose, locale }: MobileMenuProps) {
         </div>
 
         {/* Footer Actions */}
-        <div className="p-5 border-t border-slate-100 space-y-4 bg-slate-50/50">
-          <div className="flex justify-center">
+        <div className="p-5 border-t border-slate-100 dark:border-slate-800 space-y-4 bg-slate-50/50 dark:bg-slate-900/50">
+          <div className="flex items-center justify-center gap-3">
+            <ThemeToggle locale={locale} />
             <LanguageSwitcher currentLocale={locale} />
           </div>
 

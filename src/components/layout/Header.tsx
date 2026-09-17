@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Locale } from "@/lib/i18n";
 import { navigationLinks, siteMeta } from "@/data/academyData";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 import { MobileMenu } from "./MobileMenu";
 import { Menu, Sparkles } from "lucide-react";
 
@@ -28,8 +29,8 @@ export function Header({ locale }: { locale: Locale }) {
       <header
         className={`sticky top-0 z-40 transition-all duration-300 w-full ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200/80 py-3.5"
-            : "bg-white/80 backdrop-blur-xs border-b border-slate-100 py-4"
+            ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-xs border-b border-slate-200/80 dark:border-slate-800 py-3.5"
+            : "bg-white/80 dark:bg-slate-900/80 backdrop-blur-xs border-b border-slate-100 dark:border-slate-800/60 py-4"
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center justify-between">
@@ -43,10 +44,10 @@ export function Header({ locale }: { locale: Locale }) {
               <span className="font-extrabold tracking-tight">TK</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-lg sm:text-xl text-slate-900 leading-tight">
-                TechKids <span className="text-blue-600 font-semibold">Academy</span>
+              <span className="font-bold text-lg sm:text-xl text-slate-900 dark:text-white leading-tight">
+                TechKids <span className="text-blue-600 dark:text-cyan-400 font-semibold">Academy</span>
               </span>
-              <span className="text-[10px] sm:text-xs text-slate-500 font-medium -mt-0.5">
+              <span className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium -mt-0.5">
                 {locale === "ar" ? "أكاديمية التكنولوجيا للأطفال" : "Kids Tech Academy"}
               </span>
             </div>
@@ -72,8 +73,8 @@ export function Header({ locale }: { locale: Locale }) {
                   href={fullHref}
                   className={`px-3.5 py-2 rounded-xl text-sm font-semibold transition-all ${
                     isActive
-                      ? "text-blue-600 bg-blue-50/80"
-                      : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
+                      ? "text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-950/60"
+                      : "text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-800"
                   }`}
                 >
                   {item.label[locale]}
@@ -82,8 +83,9 @@ export function Header({ locale }: { locale: Locale }) {
             })}
           </nav>
 
-          {/* Right Area: Language Switcher & Primary CTA */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Right Area: Theme Toggle, Language Switcher & Primary CTA */}
+          <div className="hidden lg:flex items-center gap-3.5">
+            <ThemeToggle locale={locale} />
             <LanguageSwitcher currentLocale={locale} />
             <Link
               href={`/${locale}/contact`}
@@ -95,12 +97,13 @@ export function Header({ locale }: { locale: Locale }) {
           </div>
 
           {/* Mobile Right Controls */}
-          <div className="flex items-center gap-2.5 lg:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle locale={locale} />
             <LanguageSwitcher currentLocale={locale} />
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors focus:outline-hidden cursor-pointer"
+              className="p-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-hidden cursor-pointer"
               aria-label={locale === "ar" ? "فتح القائمة" : "Open Menu"}
             >
               <Menu className="w-6 h-6" />

@@ -23,7 +23,7 @@ export function WhyUs({ locale }: { locale: Locale }) {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white dark:bg-[#090d16] transition-colors">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <SectionHeading
           eyebrow={locale === "ar" ? "قيمنا التعليمية" : "Our Core Values"}
@@ -35,17 +35,17 @@ export function WhyUs({ locale }: { locale: Locale }) {
           {whyUsCards.map((card) => (
             <Card
               key={card.id}
-              className="flex flex-col items-start p-6 border-slate-200/90 group hover:border-blue-400/40"
+              className="flex flex-col items-start p-6 border-slate-200/90 dark:border-slate-800 group hover:border-blue-400/40 dark:hover:border-cyan-500/40"
             >
-              <div className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center mb-5 group-hover:scale-105 group-hover:bg-blue-50/60 transition-all duration-300">
+              <div className="w-12 h-12 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200/80 dark:border-slate-700 flex items-center justify-center mb-5 group-hover:scale-105 group-hover:bg-blue-50/60 dark:group-hover:bg-slate-700/60 transition-all duration-300">
                 {getCardIcon(card.icon)}
               </div>
 
-              <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
                 {card.title[locale]}
               </h3>
 
-              <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+              <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                 {card.description[locale]}
               </p>
             </Card>

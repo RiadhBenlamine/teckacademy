@@ -10,6 +10,7 @@ import { WhyUs } from "@/components/home/WhyUs";
 import { AgeGroups } from "@/components/home/AgeGroups";
 import { CTA } from "@/components/home/CTA";
 
+
 export default async function HomePage({
   params,
 }: {

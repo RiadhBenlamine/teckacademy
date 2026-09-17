@@ -14,7 +14,7 @@ export default async function ProjectsPage({
   const meta = siteMeta[locale];
 
   return (
-    <div className="py-12 md:py-20 bg-slate-50/50 min-h-[70vh]">
+    <div className="py-12 md:py-20 bg-slate-50/50 dark:bg-slate-950 min-h-[70vh] transition-colors">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <SectionHeading
           eyebrow={locale === "ar" ? "معرض الإنجازات" : "Projects Showcase"}

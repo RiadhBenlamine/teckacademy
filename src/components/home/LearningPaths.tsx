@@ -13,7 +13,7 @@ export function LearningPaths({ locale }: { locale: Locale }) {
   const isRtl = locale === "ar";
 
   return (
-    <section id="programs" className="py-16 md:py-24 bg-slate-50/70 border-y border-slate-200/60">
+    <section id="programs" className="py-16 md:py-24 bg-slate-50/70 dark:bg-slate-950/60 border-y border-slate-200/60 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <SectionHeading
           eyebrow={locale === "ar" ? "مساراتنا الأكاديمية" : "Our Academic Paths"}
@@ -25,7 +25,7 @@ export function LearningPaths({ locale }: { locale: Locale }) {
           {learningPaths.map((path) => (
             <Card
               key={path.id}
-              className="flex flex-col justify-between border-slate-200/90 group hover:border-blue-400/40"
+              className="flex flex-col justify-between border-slate-200/90 dark:border-slate-800 group hover:border-blue-400/40 dark:hover:border-cyan-500/40"
             >
               <div>
                 {/* Header with track icon and Age Badge */}
@@ -38,34 +38,34 @@ export function LearningPaths({ locale }: { locale: Locale }) {
                     <Badge variant="primary" size="sm">
                       {path.badge[locale]}
                     </Badge>
-                    <span className="text-[11px] font-semibold text-slate-500">
+                    <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400">
                       <bdi>{path.ageGroup[locale]}</bdi>
                     </span>
                   </div>
                 </div>
 
                 {/* Track Title */}
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
                   {path.title[locale]}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-2.5 text-sm text-slate-600 leading-relaxed min-h-[48px]">
+                <p className="mt-2.5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed min-h-[48px]">
                   {path.description[locale]}
                 </p>
 
                 {/* Technologies List */}
                 <div className="mt-5 space-y-2">
-                  <span className="text-xs font-bold text-slate-400 block uppercase tracking-wider">
+                  <span className="text-xs font-bold text-slate-400 dark:text-slate-500 block uppercase tracking-wider">
                     {locale === "ar" ? "الأدوات والتقنيات:" : "Technologies & Tools:"}
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {path.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100/90 text-slate-700 text-xs font-medium border border-slate-200/60"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 text-xs font-medium border border-slate-200/60 dark:border-slate-700/80"
                       >
-                        <CheckCircle2 className="w-3 h-3 text-blue-500" />
+                        <CheckCircle2 className="w-3 h-3 text-blue-500 dark:text-cyan-400" />
                         {tech}
                       </span>
                     ))}
@@ -74,10 +74,10 @@ export function LearningPaths({ locale }: { locale: Locale }) {
               </div>
 
               {/* Bottom Card Action */}
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                 <Link
                   href={`/${locale}/programs`}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-700 group/link"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-300 group/link"
                 >
                   <span>{locale === "ar" ? "تفاصيل المسار" : "View Track Details"}</span>
                   {isRtl ? (

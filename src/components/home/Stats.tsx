@@ -20,8 +20,8 @@ export function Stats({ locale }: { locale: Locale }) {
 
   return (
     <section className="relative -mt-6 sm:-mt-8 z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
-      <div className="bg-white rounded-2xl md:rounded-[24px] border border-slate-200/90 shadow-md shadow-slate-200/50 p-6 md:p-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 divide-y sm:divide-y-0 sm:divide-x sm:divide-x-reverse rtl:sm:divide-x-reverse divide-slate-100">
+      <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 shadow-md shadow-slate-200/50 dark:shadow-slate-950/40 rounded-2xl md:rounded-[24px] p-6 md:p-8 transition-colors">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 divide-y sm:divide-y-0 sm:divide-x sm:divide-x-reverse rtl:sm:divide-x-reverse divide-slate-100 dark:divide-slate-800">
           {statisticsData.map((stat, idx) => (
             <div
               key={stat.id}
@@ -29,12 +29,12 @@ export function Stats({ locale }: { locale: Locale }) {
                 idx > 0 ? "pt-4 sm:pt-0" : ""
               }`}
             >
-              <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-200/60 flex items-center justify-center mb-3 shadow-2xs">
+              <div className="w-11 h-11 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/80 flex items-center justify-center mb-3 shadow-2xs">
                 {getIcon(stat.iconName)}
               </div>
 
               {/* Stat Value with BiDi Isolation */}
-              <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 {stat.id === "ages" ? (
                   <span className="inline-flex items-center gap-1">
                     <bdi dir="ltr" className="font-sans font-bold">
@@ -48,7 +48,7 @@ export function Stats({ locale }: { locale: Locale }) {
               </div>
 
               {/* Subtitle / Description */}
-              <p className="mt-1 text-xs sm:text-sm text-slate-500 font-medium max-w-[180px]">
+              <p className="mt-1 text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium max-w-[180px]">
                 {stat.label[locale]}
               </p>
             </div>

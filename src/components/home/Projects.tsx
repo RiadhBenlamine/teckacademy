@@ -14,7 +14,7 @@ export function Projects({ locale }: { locale: Locale }) {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   return (
-    <section id="projects" className="py-16 md:py-24 bg-slate-50/70 border-t border-slate-200/60">
+    <section id="projects" className="py-16 md:py-24 bg-slate-50/70 dark:bg-slate-950/60 border-t border-slate-200/60 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <SectionHeading
           eyebrow={locale === "ar" ? "مشاريع الطلاب" : "Student Showcase"}
@@ -26,26 +26,26 @@ export function Projects({ locale }: { locale: Locale }) {
           {projectItems.map((project) => (
             <Card
               key={project.id}
-              className="flex flex-col justify-between border-slate-200/90 group hover:border-blue-400/40 p-5 sm:p-6"
+              className="flex flex-col justify-between border-slate-200/90 dark:border-slate-800 group hover:border-blue-400/40 dark:hover:border-cyan-500/40 p-5 sm:p-6"
             >
               <div>
                 {/* Project Visual Illustration */}
                 <div className="relative mb-5 rounded-2xl overflow-hidden">
                   <ProjectIllustration type={project.imageType} />
                   <div className="absolute top-3 end-3">
-                    <Badge variant="primary" size="sm" className="bg-white/95 shadow-2xs backdrop-blur-xs">
+                    <Badge variant="primary" size="sm" className="bg-white/95 dark:bg-slate-900/95 dark:border-slate-700 shadow-2xs backdrop-blur-xs">
                       {project.category[locale]}
                     </Badge>
                   </div>
                 </div>
 
                 {/* Project Title */}
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
                   {project.title[locale]}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed min-h-[44px]">
+                <p className="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed min-h-[44px]">
                   {project.description[locale]}
                 </p>
 
@@ -60,11 +60,11 @@ export function Projects({ locale }: { locale: Locale }) {
               </div>
 
               {/* View Project Button */}
-              <div className="mt-6 pt-4 border-t border-slate-100">
+              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800">
                 <button
                   type="button"
                   onClick={() => setSelectedProject(project)}
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-100 hover:bg-blue-50 text-slate-700 hover:text-blue-600 text-sm font-semibold transition-all cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-slate-800/90 hover:bg-blue-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-cyan-400 text-sm font-semibold transition-all cursor-pointer"
                 >
                   <Eye className="w-4 h-4" />
                   <span>{locale === "ar" ? "معاينة تفاصيل المشروع" : "View Project Details"}</span>
@@ -78,20 +78,20 @@ export function Projects({ locale }: { locale: Locale }) {
       {/* Project Detail Modal */}
       {selectedProject && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs"
           role="dialog"
           aria-modal="true"
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in-95 duration-200"
+            className="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-800 relative animate-in fade-in zoom-in-95 duration-200 text-slate-900 dark:text-white"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               type="button"
               onClick={() => setSelectedProject(null)}
-              className="absolute top-5 end-5 p-2 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+              className="absolute top-5 end-5 p-2 rounded-full text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
               aria-label={locale === "ar" ? "إغلاق" : "Close"}
             >
               <X className="w-5 h-5" />
@@ -108,16 +108,16 @@ export function Projects({ locale }: { locale: Locale }) {
               </Badge>
             </div>
 
-            <h3 className="text-2xl font-bold text-slate-900 mb-2">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
               {selectedProject.title[locale]}
             </h3>
 
-            <p className="text-sm text-slate-600 leading-relaxed mb-6">
+            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
               {selectedProject.description[locale]}
             </p>
 
-            <div className="space-y-3 mb-6 p-4 rounded-2xl bg-slate-50 border border-slate-200/70 text-xs sm:text-sm text-slate-700">
-              <div className="font-semibold text-slate-900">
+            <div className="space-y-3 mb-6 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/70 dark:border-slate-700 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+              <div className="font-semibold text-slate-900 dark:text-white">
                 {locale === "ar" ? "المهارات المكتسبة في هذا المشروع:" : "Key skills acquired in this project:"}
               </div>
               <div className="flex items-center gap-2">
@@ -129,7 +129,7 @@ export function Projects({ locale }: { locale: Locale }) {
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-500 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-blue-500 dark:text-cyan-400 shrink-0" />
                 <span>
                   {locale === "ar"
                     ? "التطبيق العملي للتقنيات والبرمجة الحقيقية"
@@ -157,7 +157,7 @@ export function Projects({ locale }: { locale: Locale }) {
             <button
               type="button"
               onClick={() => setSelectedProject(null)}
-              className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all"
+              className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all cursor-pointer"
             >
               {locale === "ar" ? "إغلاق المعاينة" : "Close Preview"}
             </button>

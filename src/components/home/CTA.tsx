@@ -9,7 +9,7 @@ export function CTA({ locale }: { locale: Locale }) {
   const isRtl = locale === "ar";
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24 bg-white dark:bg-slate-950 transition-colors">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
         <div className="relative rounded-3xl md:rounded-[32px] overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 p-8 sm:p-12 md:p-16 text-white text-center shadow-xl shadow-blue-600/10">
           {/* Subtle Background Circuit Circles */}

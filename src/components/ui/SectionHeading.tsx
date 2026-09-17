@@ -28,16 +28,16 @@ export function SectionHeading({
     >
       {eyebrow && (
         <div className={cn("inline-flex items-center gap-2 mb-3.5", isCentered && "justify-center")}>
-          <span className="px-3.5 py-1 rounded-full text-xs md:text-sm font-semibold tracking-wide bg-blue-50 text-blue-700 border border-blue-200/70">
+          <span className="px-3.5 py-1 rounded-full text-xs md:text-sm font-semibold tracking-wide bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200/70 dark:border-blue-800">
             {eyebrow}
           </span>
         </div>
       )}
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-3.5 text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-3.5 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
           {subtitle}
         </p>
       )}
